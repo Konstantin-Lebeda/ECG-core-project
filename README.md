@@ -7,7 +7,13 @@
 sudo apt update
 ```
 
-3. Clone Git repository:
+3. Check your Python version (must be python3.7):
+
+```shell
+python --version
+```
+
+4. Clone Git repository:
 
 ```shell
 cd ~
@@ -19,13 +25,13 @@ git clone https://github.com/Konstantin-Lebeda/ECG-core-project.git
 cd ECG-core-project
 ```
 
-4. Install requirement python libraries:
+5. Install requirement python libraries:
 
 ```shell
 pip3 install -r requirements.txt
 ```
 
-5. Run simpletest.py to make sure, that everything goes on so far:
+6. Run simpletest.py to make sure, that everything goes on so far:
 
 ```shell
 python3 simpletest.py
