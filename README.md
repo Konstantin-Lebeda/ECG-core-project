@@ -11,7 +11,11 @@ sudo apt update
 
 ```shell
 cd ~
+```
+```shell
 git clone https://github.com/Konstantin-Lebeda/ECG-core-project.git
+```
+```shell
 cd ECG-core-project
 ```
 
