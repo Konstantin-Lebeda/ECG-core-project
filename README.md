@@ -10,7 +10,7 @@ sudo apt update
 3. Check your Python version (must be python3.7):
 
 ```shell
-python --version
+python3 --version
 ```
 
 4. Clone Git repository:
