@@ -13,13 +13,11 @@ sudo apt update
 python3 --version
 ```
 
-4. Install git:
+4. Clone repository using git:
 
 ```shell
 sudo apt install git
 ```
-
-5. Clone Git repository:
 
 ```shell
 cd ~
@@ -31,13 +29,17 @@ git clone https://github.com/Konstantin-Lebeda/ECG-core-project.git
 cd ECG-core-project
 ```
 
-6. Install requirement python libraries:
+5. Install requirement python libraries usin pip3:
+
+```shell
+sudo apt install python3-pip
+```
 
 ```shell
 pip3 install -r requirements.txt
 ```
 
-7. Run simpletest.py to make sure, that everything goes on so far:
+6. Run simpletest.py to make sure, that everything goes on so far:
 
 ```shell
 python3 simpletest.py
