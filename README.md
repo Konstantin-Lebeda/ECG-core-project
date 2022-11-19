@@ -7,7 +7,7 @@
 sudo apt update
 ```
 
-3. Check your Python version (must be python3.7):
+3. Check your Python version (it is better to use python3.7):
 
 ```shell
 python3 --version
