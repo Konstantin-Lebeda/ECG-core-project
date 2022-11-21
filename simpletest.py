@@ -1,12 +1,15 @@
 print('-' *25)
 print('simpletest STARTED')
-import numpy
-import matplotlib
+
+import numpy as np
 import matplotlib.pyplot as plt
-import pandas
-import scipy
-import statsmodels
-import sqlalchemy
+import pandas as pd
+import scipy.fftpack as fftpack
+import statsmodels.api as sm
+from sqlalchemy import column
+from scipy.fft import fft, fftfreq
+from matplotlib.animation import FuncAnimation
+
 print('... requirements OK')
 import corefunc as cf
 print('... corefunc OK')
@@ -14,10 +17,12 @@ df = cf.DFReadCSV('EXAMPLE.CSV')
 print('... DFReadCSV OK')
 time, voltage = cf.DFExtractData(df)
 print('... DFExtractData OK')
-sig = cf.LowessSig(time, voltage)
+sig = cf.LowessSig(time, voltage, 0.005)
 print('... LowessSig OK')
-freq, fft = cf.FFTSig(sig, 0.002)
+freq, fft = cf.FFTSig(sig, 0.0025)
 print('... FFTSig OK')
+cf.DerivativeCheck(0, 0, 0, 0, 0)
+print('... DerivativeCheck OK')
 
 plt.figure(figsize=(16,8))
 
