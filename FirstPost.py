@@ -21,7 +21,7 @@ value_list = []
 time_list = []
 timesleep = 0.002
 
-while t0 < 20:
+while t0 < 10:
     value = round(adc.read_adc_difference(0, gain=GAIN, data_rate=920) / 500, 2)
     print('Muscular activity = {0}'.format(value))
     value_list.append(value)
@@ -42,7 +42,7 @@ plt.grid(color='black', linewidth=0.5)
 plt.ylabel("Signal")
 
 plt.subplot(1, 3, 2)
-plt.plot(time_value, sig, linewidth=2, color='red')
+plt.plot(time_list, sig, linewidth=2, color='red')
 plt.grid(color='black', linewidth=0.5)
 plt.ylabel("Lowess")
 
