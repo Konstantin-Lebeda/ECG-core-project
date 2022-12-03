@@ -19,9 +19,11 @@ print('Start ...')
 t0 = 0
 value_list = []
 time_list = []
-timesleep = 0.002
+timesleep = 0.02
 
-while t0 < 10:
+exp_time = input('Введите время эксперимента, с')
+
+while t0 < exp_time:
     value = round(adc.read_adc_difference(0, gain=GAIN, data_rate=920) / 500, 2)
     print('Muscular activity = {0}'.format(value))
     value_list.append(value)
