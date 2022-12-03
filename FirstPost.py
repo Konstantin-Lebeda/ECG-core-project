@@ -10,7 +10,6 @@ from sqlalchemy import column
 from scipy.fft import fft, fftfreq
 print('requirements OK ...')
 
-
 adc = Adafruit_ADS1x15.ADS1015(0x48, busnum=1)
 GAIN = 1
 print('ADS1015 OK ...')
