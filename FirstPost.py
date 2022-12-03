@@ -19,6 +19,7 @@ print('Start ...')
 t0 = 0
 value_list = []
 time_list = []
+timesleep = 0.002
 
 while t0 < 20:
     value = adc.read_adc_difference(0, gain=GAIN, data_rate=920)
