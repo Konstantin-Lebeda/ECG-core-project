@@ -21,7 +21,7 @@ value_list = []
 time_list = []
 timesleep = 0.02
 
-exp_time = input('Введите время эксперимента, с')
+exp_time = int(input('Введите время эксперимента, с'))
 
 while t0 < exp_time:
     value = round(adc.read_adc_difference(0, gain=GAIN, data_rate=920) / 500, 2)
