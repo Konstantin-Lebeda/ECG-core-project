@@ -30,9 +30,9 @@ while t0 < exp_time:
     t0 += timesleep
     time_list.append(t0)
 
-sig = cf.LowessSig(time_list, value_list, 0.01)
+sig = cf.LowessSig(time_list, value_list, 0.1)
 print('Lowess OK ...')
-freq, fft = cf.FFTSig(sig, len(value_list)/time_list[-1])
+freq, fft = cf.FFTSig(value_list, len(value_list)/time_list[-1])
 print('FFT OK ...')
 
 plt.figure(figsize=(16,8))
