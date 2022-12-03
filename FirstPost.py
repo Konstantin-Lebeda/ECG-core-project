@@ -21,7 +21,7 @@ value_list = []
 time_list = []
 
 while t0 < 20:
-    value = adc.read_difference(0, gain=GAIN, data_rate=920)
+    value = adc.read_adc_difference(0, gain=GAIN, data_rate=920)
     value_list.append(value)
     time.sleep(timesleep)
     t0 += timesleep
