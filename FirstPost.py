@@ -37,17 +37,17 @@ print('FFT OK ...')
 
 plt.figure(figsize=(16,8))
 
-plt.subplot(1, 3, 1)
+plt.subplot(3, 1, 1)
 plt.plot(time_list, value_list, linewidth=1, color='black')
 plt.grid(color='black', linewidth=0.5)
 plt.ylabel("Signal")
 
-plt.subplot(1, 3, 2)
+plt.subplot(3, 1, 2)
 plt.plot(time_list, sig, linewidth=2, color='red')
 plt.grid(color='black', linewidth=0.5)
 plt.ylabel("Lowess")
 
-plt.subplot(1, 3, 3)
+plt.subplot(3, 1, 3)
 plt.plot(freq, fft, linewidth=2, color='blue')
 plt.grid(color='black', linewidth=0.5)
 plt.title("FFT of signal after lowess")
