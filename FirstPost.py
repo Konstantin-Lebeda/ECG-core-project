@@ -1,0 +1,52 @@
+import corefunc as cf
+import Adafruit_ADS1x15
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import scipy.fftpack as fftpack
+import statsmodels.api as sm
+import time
+from sqlalchemy import column
+from scipy.fft import fft, fftfreq
+print('requirements OK ...')
+
+
+adc = Adafruit_ADS1x15.ADS1015(0x48, busnum=1)
+GAIN = 1
+print('ADS1015 OK ...')
+print('Start ...')
+
+t0 = 0
+value_list = []
+time_list = []
+
+while t0 < 20:
+    value = adc.read_difference(0, gain=GAIN, data_rate=920)
+    value_list.append(value)
+    time.sleep(timesleep)
+    t0 += timesleep
+    time_list.append(t0)
+
+sig = cf.LowessSig(time_list, value_list, 0.01)
+print('Lowess OK ...')
+freq, fft = cf.FFTSig(sig, len(value_list)/time_list[-1])
+print('FFT OK ...')
+
+plt.figure(figsize=(16,8))
+
+plt.subplot(1, 3, 1)
+plt.plot(time_list, value_list, linewidth=1, color='black')
+plt.grid(color='black', linewidth=0.5)
+plt.ylabel("Signal")
+
+plt.subplot(1, 3, 2)
+plt.plot(time, sig, linewidth=2, color='red')
+plt.grid(color='black', linewidth=0.5)
+plt.ylabel("Lowess")
+
+plt.subplot(1, 3, 3)
+plt.plot(freq, fft, linewidth=2, color='blue')
+plt.grid(color='black', linewidth=0.5)
+plt.title("FFT of signal after lowess")
+
+plt.show()
